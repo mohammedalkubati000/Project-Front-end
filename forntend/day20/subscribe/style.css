@@ -1,0 +1,122 @@
+ /* body {
+  background-color: #f4f6f8;
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  margin: 0;
+  padding: 20px;
+}
+
+/* الحاوية الرئيسية للتنسيق */
+ /*body > header,
+body > main,
+body > footer {
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+  box-sizing: border-box;
+} */
+
+/* 1. الهيدر */
+/* header {
+  background-color: #2c3e50;
+  color: #ffffff;
+  padding: 25px 20px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  text-align: center;
+} */
+
+ /*header h1 {
+  margin: 0 0 10px 0;
+  font-size: 32px;
+  color: #ffffff;
+} */
+
+/*nav a {
+  color: #3498db;
+  text-decoration: underline;
+  font-weight: bold;
+} */
+
+/* 2. المحتوى الرئيسي */
+/*main {
+  background-color: #ffffff;
+  padding: 35px 40px;
+}*/
+
+/*section {
+  margin-bottom: 35px;
+}*/
+
+/*section:last-child {
+  margin-bottom: 0;
+}*/
+
+/* 3. نموذج الاشتراك */
+/*form label {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 16px auto 6px auto;
+  text-align: right;
+  font-weight: bold;
+  font-size: 15px;
+  color: #333333;
+} */
+
+/*form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  text-align: right;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}*/
+
+/*form input:focus {
+  border-color: #3498db;
+} */
+
+/* زر الاشتراك */
+/*form button {
+  display: block;
+  margin: 30px auto 0 auto;
+  padding: 12px 35px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+} */
+
+/*form button:hover {
+  background-color: #2980b9;
+}*/
+
+/* 4. الفوتر */
+/*footer {
+  background-color: #ecf0f1;
+  color: #7f8c8d;
+  padding: 20px;
+  text-align: center;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-top: 1px solid #e0e0e0;
+}*/
+/*
+footer p {
+  margin: 0;
+  font-size: 14px;
+} */
