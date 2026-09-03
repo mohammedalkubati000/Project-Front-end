@@ -1,0 +1,11 @@
+
+#settings-page main form input[type="checkbox"],
+#settings-page main form input[type="radio"] {
+    accent-color: #5c3a21;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-left: 6px;
+}
+

@@ -1,0 +1,29 @@
+/* إلغاء النقاط والمسافات الافتراضية للقائمة */
+
+ul.link-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* تحويل الرابط إلى بطاقة تفاعلية أنيقة */
+ul.link-list li a {
+    display: block;
+    background-color: #faf8f5;
+    color: #2A1B10 !important;
+    text-decoration: none;
+    padding: 14px 18px;
+    border-radius: 8px;
+    border-right: 4px solid #5c3a21;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+/* تأثير التمرير (Hover) على نتيجة البحث */
+ul.link-list li a:hover {
+    background-color: #f0e8df;
+    transform: translateX(-4px);
+}

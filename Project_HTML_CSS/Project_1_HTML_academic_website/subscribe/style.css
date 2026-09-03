@@ -1,0 +1,14 @@
+
+#subscribe-page main,
+#settings-page main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#subscribe-page main section,
+#settings-page main section {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+}

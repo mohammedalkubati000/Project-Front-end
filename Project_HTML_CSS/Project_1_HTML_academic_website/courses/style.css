@@ -1,0 +1,75 @@
+.courses-grid,
+main section ul.courses-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    direction: rtl;
+}
+
+.courses-grid li,
+main section ul.courses-list li {
+    background-color: #faf8f5;
+    padding: 15px;
+    border-radius: 8px;
+    border-right: 4px solid #5c3a21;
+    font-weight: 600;
+    color: #2A1B10;
+    text-align: center;
+}
+
+/* --- تنسيق جدول الدورات --- */
+#courses-page table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    border: none !important;
+    margin-top: 15px !important;
+    background-color: #ffffff !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+#courses-page table th, 
+#courses-page table td {
+    padding: 14px 16px !important;
+    text-align: right !important;
+    border: none !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+#courses-page table th {
+    background-color: #2A1B10 !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+}
+
+/* تلوين الصفوف بالتناوب */
+#courses-page table tbody tr:nth-child(even) {
+    background-color: #faf8f5 !important;
+}
+
+/* تأثير التمرير على الصف */
+#courses-page table tbody tr:hover {
+    background-color: #f0e8df !important;
+}
+
+/* تحويل رابط "انضم الآن" إلى زر بني */
+#courses-page table td a {
+    display: inline-block !important;
+    background-color: #5c3a21 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    padding: 8px 16px !important;
+    border-radius: 6px !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    transition: background-color 0.3s ease !important;
+}
+
+#courses-page table td a:hover {
+    background-color: #2A1B10 !important;
+}

@@ -1,0 +1,22 @@
+#profile-page main section img,
+main section img.profile-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #5c3a21;
+    display: block;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+#profile-page section img,
+body[id*="profile"] section img {
+    width: 140px !important;
+    height: 140px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    border: 3px solid #5c3a21 !important;
+    display: block !important;
+    margin: 15px 0 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+}
