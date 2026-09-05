@@ -1,24 +1,24 @@
-
+/*  خاص في تنسيق الجدول بالكامل */
 main table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    width: 100%;  /*  مساحة الجدول  */
+    border-collapse: collapse; /*  حقت الدمج الخلايا */
+    margin-top: 15px;  /*  يترك مسافة للجدول لفصل العناصر الي قبله */
+    background-color: #ffffff; /* لون خلفيه الجدول  */
+    border-radius: 8px; /*   يخلي زواية الجدول دائريه */
+    overflow: hidden;/*   عشان ما يطلع المحتوى عن الجدول*/
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);/*  ضل خفيف لم اسفل الجدول */
 }
-
+/*   حاص في تنسيق الخلايا و العناوين*/
 main table th, 
 main table td {
-    padding: 14px 16px;
-    text-align: right;
-    border-bottom: 1px solid #e2e8f0;
+    padding: 14px 16px;  /*   حقت الهوامش بحيث يرتب عشان ما تدخل مع بعض */
+    text-align: right;  /*  يخلي النص من اليمين عشان العربي */
+    border-bottom: 1px solid #e2e8f0; /*  خط عشان يفصل بين الصف */
 }
-
+/*  صف العناوين */
 main table th {
-    background-color: #2A1B10;
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 0.95rem;
+    background-color: #2A1B10;  /* لون الخلفية  */
+    color: #ffffff;  /*  لون العناوين */
+    font-weight: 600;  /*   يخلي الخط عريض*/
+    font-size: 0.95rem;  /*   يحدد حجم الخط بشكل أصغر*/
 }
