@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نون - Noon Style Products</title>
+  <!-- استدعاء خط Cairo ليكون تماماً مثل تصميم نون -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    body {
+      background-color: #f7f7fa;
+      padding: 20px;
+    }
+
+    /* حاوية المنتجات - شبكة تجاوبية مثل نون */
+    .noon-grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 12px;
+    }
+
+    /* تصميم البطاقة الأساسي */
+    .noon-card {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      cursor: pointer;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .noon-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* صور المنتجات */
+    .img-wrapper {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .img-wrapper img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    /* عنوان المنتج - سطرين كحد أقصى */
+    .product-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #404040;
+      line-height: 1.4;
+      margin-bottom: 8px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      height: 36px;
+    }
+
+    /* الأسعار والخصومات */
+    .price-container {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .currency {
+      font-size: 11px;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .current-price {
+      font-size: 16px;
+      font-weight: 800;
+      color: #000;
+    }
+
+    .old-price {
+      font-size: 12px;
+      color: #7e859b;
+      text-decoration: line-through;
+    }
+
+    /* التقييم وشعار express الخاص بنون */
+    .card-footer {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 8px;
+    }
+
+    /* شارة نون إكسبرس */
+    .express-badge {
+      background-color: #feee00;
+      color: #000;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 2px;
+      font-style: italic;
+      letter-spacing: 0.5px;
+    }
+
+    /* النجوم والتقييم */
+    .rating-badge {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      background-color: #f2f3f5;
+      padding: 2px 6px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #38ae04;
+    }
+
+    .rating-star {
+      color: #38ae04;
+      font-size: 10px;
+    }
+
+    .rating-count {
+      color: #7e859b;
+      font-weight: 400;
+    }
+
+    /* رسالة التحميل */
+    .loading-text {
+      grid-column: 1 / -1;
+      text-align: center;
+      font-size: 16px;
+      color: #7e859b;
+      padding: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- حاوية العرض -->
+  <section id="noon-products" class="noon-grid">
+    <p class="loading-text">جاري تحميل منتجات نون...</p>
+  </section>
+
+  <script>
+    const API_URL = 'https://fakestoreapi.com/products';
+    const container = document.getElementById('noon-products');
+
+    async function fetchNoonProducts() {
+      try {
+        const response = await fetch(API_URL);
+        const products = await response.json();
+
+        container.innerHTML = ''; // تفريغ نص التحميل
+
+        products.forEach(product => {
+          // حساب سعر افتراضي قديم لإظهار الخصم بأسلوب نون
+          const oldPrice = (product.price * 1.25).toFixed(2);
+          
+          const card = document.createElement('div');
+          card.className = 'noon-card';
+
+          card.innerHTML = `
+            <div class="img-wrapper">
+              <img src="${product.image}" alt="${product.title}" loading="lazy">
+            </div>
+
+            <h3 class="product-title">${product.title}</h3>
+
+            <div class="price-container">
+              <span class="currency">ر.س</span>
+              <span class="current-price">${product.price.toFixed(2)}</span>
+              <span class="old-price">${oldPrice}</span>
+            </div>
+
+            <div class="card-footer">
+              <span class="express-badge">express</span>
+              
+              <div class="rating-badge">
+                <span>${product.rating.rate}</span>
+                <span class="rating-star">★</span>
+                <span class="rating-count">(${product.rating.count})</span>
+              </div>
+            </div>
+          `;
+
+          container.appendChild(card);
+        });
+
+      } catch (error) {
+        console.error('خطأ في جلب البيانات:', error);
+        container.innerHTML = '<p class="loading-text">عذراً، تعذر تحميل المنتجات.</p>';
+      }
+    }
+
+    fetchNoonProducts();
+  </script>
+
+</body>
+</html>
